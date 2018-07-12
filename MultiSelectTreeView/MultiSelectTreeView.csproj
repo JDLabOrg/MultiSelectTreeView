@@ -157,6 +157,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <AppDesigner Include="Properties\" />
+    <None Include=".editorconfig" />
     <None Include="NuGet\MultiSelectTreeView.nuspec" />
   </ItemGroup>
   <ItemGroup />
