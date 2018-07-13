@@ -25,7 +25,7 @@ namespace System.Windows.Controls
 		#region Properties
 
 		public bool LastCancelAll { get; private set; }
-		
+
 		internal static bool IsControlKeyDown
 		{
 			get
@@ -90,7 +90,6 @@ namespace System.Windows.Controls
 				{
 					// Requested to select the single already-selected item. Don't change the selection.
 					FocusHelper.Focus(item, true);
-					lastShiftRoot = item.DataContext;
 					return true;
 				}
 				else
@@ -148,8 +147,9 @@ namespace System.Windows.Controls
 			}
 			else if (IsShiftKeyDown && treeView.SelectedItems.Count > 0)
 			{
-				object firstSelectedItem = lastShiftRoot ?? treeView.SelectedItems.First();
-				MultiSelectTreeViewItem shiftRootItem = treeView.GetTreeViewItemsFor(new List<object> { firstSelectedItem }).First();
+				object firstSelectedItem = lastShiftRoot ?? treeView.LastSelectedItem;
+				var items = treeView.GetTreeViewItemsFor(new List<object> { firstSelectedItem });
+				MultiSelectTreeViewItem shiftRootItem = items.First();
 
 				var newSelection = treeView.GetNodesToSelectBetween(shiftRootItem, item).Select(n => n.DataContext).ToList();
 				// Make a copy of the list because we're modifying it while enumerating it
@@ -206,7 +206,7 @@ namespace System.Windows.Controls
 						}
 					}
 				}
-				
+
 				var e = new PreviewSelectionChangedEventArgs(true, item.DataContext);
 				OnPreviewSelectionChanged(e);
 				if (e.CancelAny)
@@ -217,7 +217,6 @@ namespace System.Windows.Controls
 				}
 
 				treeView.SelectedItems.Add(item.DataContext);
-				lastShiftRoot = item.DataContext;
 			}
 
 			FocusHelper.Focus(item, true);
@@ -324,7 +323,7 @@ namespace System.Windows.Controls
 			}
 
 			double targetY = item.TransformToAncestor(treeView).Transform(new Point()).Y;
-			FrameworkElement itemContent = (FrameworkElement) item.Template.FindName("headerBorder", item);
+			FrameworkElement itemContent = (FrameworkElement)item.Template.FindName("headerBorder", item);
 			double offset = treeView.ActualHeight - 2 * itemContent.ActualHeight;
 			if (!down) offset = -offset;
 			targetY += offset;

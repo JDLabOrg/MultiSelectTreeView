@@ -1,0 +1,11 @@
+﻿#
+# formatting document
+# https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference#formatting-conventions
+#
+
+
+# Code files
+[*.cs]
+indent_style         = tab
+csharp_prefer_braces = true
+
