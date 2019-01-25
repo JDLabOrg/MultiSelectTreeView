@@ -176,67 +176,67 @@ namespace System.Windows.Controls
 
 		public Brush BackgroundFocused
 		{
-			get { return (Brush) GetValue(BackgroundFocusedProperty); }
+			get { return (Brush)GetValue(BackgroundFocusedProperty); }
 			set { SetValue(BackgroundFocusedProperty, value); }
 		}
 
 		public Brush BackgroundSelected
 		{
-			get { return (Brush) GetValue(BackgroundSelectedProperty); }
+			get { return (Brush)GetValue(BackgroundSelectedProperty); }
 			set { SetValue(BackgroundSelectedProperty, value); }
 		}
 
 		public Brush ForegroundSelected
 		{
-			get { return (Brush) GetValue(ForegroundSelectedProperty); }
+			get { return (Brush)GetValue(ForegroundSelectedProperty); }
 			set { SetValue(ForegroundSelectedProperty, value); }
 		}
 
 		public Brush BackgroundSelectedHovered
 		{
-			get { return (Brush) GetValue(BackgroundSelectedHoveredProperty); }
+			get { return (Brush)GetValue(BackgroundSelectedHoveredProperty); }
 			set { SetValue(BackgroundSelectedHoveredProperty, value); }
 		}
 
 		public Brush BackgroundHovered
 		{
-			get { return (Brush) GetValue(BackgroundHoveredProperty); }
+			get { return (Brush)GetValue(BackgroundHoveredProperty); }
 			set { SetValue(BackgroundHoveredProperty, value); }
 		}
 
 		public Brush BackgroundInactive
 		{
-			get { return (Brush) GetValue(BackgroundInactiveProperty); }
+			get { return (Brush)GetValue(BackgroundInactiveProperty); }
 			set { SetValue(BackgroundInactiveProperty, value); }
 		}
 
 		public Brush ForegroundInactive
 		{
-			get { return (Brush) GetValue(ForegroundInactiveProperty); }
+			get { return (Brush)GetValue(ForegroundInactiveProperty); }
 			set { SetValue(ForegroundInactiveProperty, value); }
 		}
 
 		public Brush BorderBrushInactive
 		{
-			get { return (Brush) GetValue(BorderBrushInactiveProperty); }
+			get { return (Brush)GetValue(BorderBrushInactiveProperty); }
 			set { SetValue(BorderBrushInactiveProperty, value); }
 		}
 
 		public Brush BorderBrushHovered
 		{
-			get { return (Brush) GetValue(BorderBrushHoveredProperty); }
+			get { return (Brush)GetValue(BorderBrushHoveredProperty); }
 			set { SetValue(BorderBrushHoveredProperty, value); }
 		}
 
 		public Brush BorderBrushFocused
 		{
-			get { return (Brush) GetValue(BorderBrushFocusedProperty); }
+			get { return (Brush)GetValue(BorderBrushFocusedProperty); }
 			set { SetValue(BorderBrushFocusedProperty, value); }
 		}
 
 		public Brush BorderBrushSelected
 		{
-			get { return (Brush) GetValue(BorderBrushSelectedProperty); }
+			get { return (Brush)GetValue(BorderBrushSelectedProperty); }
 			set { SetValue(BorderBrushSelectedProperty, value); }
 		}
 
@@ -246,73 +246,73 @@ namespace System.Windows.Controls
 
 		public DataTemplate ContentTemplateEdit
 		{
-			get { return (DataTemplate) GetValue(ContentTemplateEditProperty); }
+			get { return (DataTemplate)GetValue(ContentTemplateEditProperty); }
 			set { SetValue(ContentTemplateEditProperty, value); }
 		}
 
 		public bool IsExpanded
 		{
-			get { return (bool) GetValue(IsExpandedProperty); }
+			get { return (bool)GetValue(IsExpandedProperty); }
 			set { SetValue(IsExpandedProperty, value); }
 		}
 
 		public bool IsEditable
 		{
-			get { return (bool) GetValue(IsEditableProperty); }
+			get { return (bool)GetValue(IsEditableProperty); }
 			set { SetValue(IsEditableProperty, value); }
 		}
 
 		public new bool IsVisible
 		{
-			get { return (bool) GetValue(IsVisibleProperty); }
+			get { return (bool)GetValue(IsVisibleProperty); }
 			set { SetValue(IsVisibleProperty, value); }
 		}
 
 		public bool IsEditing
 		{
-			get { return (bool) GetValue(IsEditingProperty); }
+			get { return (bool)GetValue(IsEditingProperty); }
 			set { SetValue(IsEditingProperty, value); }
 		}
 
 		public bool IsSelected
 		{
-			get { return (bool) GetValue(IsSelectedProperty); }
+			get { return (bool)GetValue(IsSelectedProperty); }
 			set { SetValue(IsSelectedProperty, value); }
 		}
 
 		public string DisplayName
 		{
-			get { return (string) GetValue(DisplayNameProperty); }
+			get { return (string)GetValue(DisplayNameProperty); }
 			set { SetValue(DisplayNameProperty, value); }
 		}
 
 		public bool HoverHighlighting
 		{
-			get { return (bool) GetValue(HoverHighlightingProperty); }
+			get { return (bool)GetValue(HoverHighlightingProperty); }
 			set { SetValue(HoverHighlightingProperty, value); }
 		}
 
 		public int ItemIndent
 		{
-			get { return (int) GetValue(ItemIndentProperty); }
+			get { return (int)GetValue(ItemIndentProperty); }
 			set { SetValue(ItemIndentProperty, value); }
 		}
 
 		public bool IsKeyboardMode
 		{
-			get { return (bool) GetValue(IsKeyboardModeProperty); }
+			get { return (bool)GetValue(IsKeyboardModeProperty); }
 			set { SetValue(IsKeyboardModeProperty, value); }
 		}
 
 		public string Remarks
 		{
-			get { return (string) GetValue(RemarksProperty); }
+			get { return (string)GetValue(RemarksProperty); }
 			set { SetValue(RemarksProperty, value); }
 		}
 
 		public DataTemplate RemarksTemplate
 		{
-			get { return (DataTemplate) GetValue(RemarksTemplateProperty); }
+			get { return (DataTemplate)GetValue(RemarksTemplateProperty); }
 			set { SetValue(RemarksTemplateProperty, value); }
 		}
 
@@ -408,7 +408,7 @@ namespace System.Windows.Controls
 			MultiSelectTreeViewItem item = d as MultiSelectTreeViewItem;
 			if (item != null)
 			{
-				if ((bool) e.NewValue)
+				if ((bool)e.NewValue)
 				{
 					if (!item.ParentTreeView.SelectedItems.Contains(item.DataContext))
 					{
@@ -429,7 +429,7 @@ namespace System.Windows.Controls
 			//System.Diagnostics.Debug.WriteLine("P(" + ParentTreeView.Name + "): " + e.Property + " " + e.NewValue);
 			if (e.Property.Name == "IsEditing")
 			{
-				if ((bool) e.NewValue == false)
+				if ((bool)e.NewValue == false)
 				{
 					StopEditing();
 				}
@@ -438,16 +438,16 @@ namespace System.Windows.Controls
 			if (e.Property.Name == "IsExpanded")
 			{
 				// Bring newly expanded child nodes into view if they'd be outside of the current view
-				if ((bool) e.NewValue == true)
+				if ((bool)e.NewValue == true)
 				{
 					if (VisualChildrenCount > 0)
 					{
-						((FrameworkElement) GetVisualChild(VisualChildrenCount - 1)).BringIntoView();
+						((FrameworkElement)GetVisualChild(VisualChildrenCount - 1)).BringIntoView();
 					}
 				}
 				// Deselect children of collapsed item
 				// (If one resists, don't collapse)
-				if ((bool) e.NewValue == false)
+				if ((bool)e.NewValue == false)
 				{
 					if (!ParentTreeView.DeselectRecursive(this, false))
 					{
@@ -460,7 +460,7 @@ namespace System.Windows.Controls
 			{
 				// Deselect invisible item and its children
 				// (If one resists, don't hide)
-				if ((bool) e.NewValue == false)
+				if ((bool)e.NewValue == false)
 				{
 					if (!ParentTreeView.DeselectRecursive(this, true))
 					{
@@ -500,7 +500,7 @@ namespace System.Windows.Controls
 		{
 			base.OnMouseDoubleClick(e);
 
-			FrameworkElement itemContent = (FrameworkElement) this.Template.FindName("headerBorder", this);
+			FrameworkElement itemContent = (FrameworkElement)this.Template.FindName("headerBorder", this);
 			if (!itemContent.IsMouseOver)
 			{
 				// A (probably disabled) child item was really clicked, do nothing here
@@ -602,7 +602,7 @@ namespace System.Windows.Controls
 					case Key.Return:
 						FocusHelper.Focus(this, true);
 						IsEditing = false;
-						e.Handled = true;
+						//e.Handled = true;
 						break;
 					case Key.Space:
 						ParentTreeView.Selection.SelectCurrentBySpace();
@@ -641,7 +641,7 @@ namespace System.Windows.Controls
 			//System.Diagnostics.Debug.WriteLine("MultiSelectTreeViewItem.OnMouseDown(Item = " + this.DisplayName + ", Button = " + e.ChangedButton + ")");
 			base.OnMouseDown(e);
 
-			FrameworkElement itemContent = (FrameworkElement) this.Template.FindName("headerBorder", this);
+			FrameworkElement itemContent = (FrameworkElement)this.Template.FindName("headerBorder", this);
 			if (!itemContent.IsMouseOver)
 			{
 				// A (probably disabled) child item was really clicked, do nothing here
