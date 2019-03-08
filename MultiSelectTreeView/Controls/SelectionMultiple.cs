@@ -217,6 +217,7 @@ namespace System.Windows.Controls
 				}
 
 				treeView.SelectedItems.Add(item.DataContext);
+				lastShiftRoot = item.DataContext;
 			}
 
 			FocusHelper.Focus(item, true);
