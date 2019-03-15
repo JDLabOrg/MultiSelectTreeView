@@ -217,6 +217,11 @@ namespace System.Windows.Controls
 				}
 
 				treeView.SelectedItems.Add(item.DataContext);
+				#region IUEditor
+				// 20190313 DH
+				// (Ctrl or Shift키를 누르고)multi selection을 한 후에 single selction을 하면 lastShiftRoot가 바뀌도록 변경
+				lastShiftRoot = item.DataContext;
+				#endregion
 			}
 
 			FocusHelper.Focus(item, true);
