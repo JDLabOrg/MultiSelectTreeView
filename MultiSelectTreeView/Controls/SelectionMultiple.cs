@@ -52,6 +52,11 @@ namespace System.Windows.Controls
 			}
 		}
 
+		public void ClearLastShiftRoot()
+		{
+			lastShiftRoot = null;
+		}
+
 		public void ApplyTemplate()
 		{
 			borderSelectionLogic = new BorderSelectionLogic(
@@ -149,6 +154,13 @@ namespace System.Windows.Controls
 			{
 				object firstSelectedItem = lastShiftRoot ?? treeView.LastSelectedItem;
 				var items = treeView.GetTreeViewItemsFor(new List<object> { firstSelectedItem });
+				#region IUEditor
+				///@DH 20190611 items.Count가 0일때 exception 발생
+				if (items.Count() == 0)
+				{
+					return false;
+				}
+				#endregion
 				MultiSelectTreeViewItem shiftRootItem = items.First();
 
 				var newSelection = treeView.GetNodesToSelectBetween(shiftRootItem, item).Select(n => n.DataContext).ToList();
@@ -185,6 +197,7 @@ namespace System.Windows.Controls
 						treeView.SelectedItems.Add(newItem);
 					}
 				}
+
 			}
 			else
 			{
