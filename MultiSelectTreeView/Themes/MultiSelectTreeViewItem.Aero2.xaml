@@ -73,7 +73,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <!--  Set the second column width to * to have the items border expand to the right edge  -->
-                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
                             <!--  region Expander button  -->
@@ -164,8 +164,12 @@
                             <!--  endregion Expander button  -->
 
                             <!--  region Element grid  -->
-                            <StackPanel Grid.Column="1" Orientation="Horizontal">
-                                <Grid Name="ElementGrid">
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Name="ElementGrid" HorizontalAlignment="Stretch">
                                     <Border Name="headerBorder"
                                         Margin="0,0,0,-1"
                                         Padding="{TemplateBinding Control.Padding}"
@@ -187,8 +191,12 @@
                                     </Border>
                                 </Grid>
 
-                                <ContentPresenter Content="{TemplateBinding Remarks}" ContentTemplate="{TemplateBinding RemarksTemplate}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
-                            </StackPanel>
+                                <ContentPresenter
+                                    Grid.Column="1"
+                                    Content="{TemplateBinding Remarks}"
+                                    ContentTemplate="{TemplateBinding RemarksTemplate}"
+                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                            </Grid>
                             <!--  endregion Element grid  -->
                         </Grid>
                         <Grid Name="ItemsHostGrid" Margin="{TemplateBinding ItemIndent, Converter={StaticResource ThicknessLeftConverter}}">
