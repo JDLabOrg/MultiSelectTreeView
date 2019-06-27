@@ -271,6 +271,15 @@ namespace System.Windows.Controls
 
 				SelectedItems.Clear();
 			}
+
+			#region IUEditor 
+			/// @DH 20190611 SelectedItems를 Clear할때 LastShiftRoot도 같이 Clear해줘야 이후에 Shift selection이 정상동작함
+			if (Selection is SelectionMultiple sm)
+			{
+				sm.ClearLastShiftRoot();
+			}
+			#endregion
+
 			return true;
 		}
 
@@ -387,6 +396,14 @@ namespace System.Windows.Controls
 			}
 			
 			SelectedItems.Clear();
+
+			#region IUEditor 
+			/// @DH 20190611 SelectedItems를 Clear할때 LastShiftRoot도 같이 Clear해줘야 이후에 Shift selection이 정상동작함
+			if (Selection is SelectionMultiple sm)
+			{
+				sm.ClearLastShiftRoot();
+			}
+			#endregion
 			return true;
 		}
 
