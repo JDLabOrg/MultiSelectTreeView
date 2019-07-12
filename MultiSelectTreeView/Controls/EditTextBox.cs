@@ -52,6 +52,14 @@ namespace System.Windows.Controls
 			}
 		}
 
+		protected override void OnLostKeyboardFocus(KeyboardFocusChangedEventArgs e)
+		{
+			base.OnLostKeyboardFocus(e);
+
+			BindingExpression be = GetBindingExpression(TextProperty);
+			if (be != null) be.UpdateSource();
+		}
+
 		private void OnTreeViewEditTextBoxLoaded(object sender, RoutedEventArgs e)
 		{
 			BindingExpression be = GetBindingExpression(TextProperty);
