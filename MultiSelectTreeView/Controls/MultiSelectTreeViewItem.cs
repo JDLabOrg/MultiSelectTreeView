@@ -596,14 +596,10 @@ namespace System.Windows.Controls
 						e.Handled = true;
 						break;
 					case Key.Escape:
+					case Key.Return:
 						StopEditing();
 						e.Handled = true;
-						break;
-					case Key.Return:
-						FocusHelper.Focus(this, true);
-						IsEditing = false;
-						e.Handled = true;
-						break;
+						break;					
 					case Key.Space:
 						ParentTreeView.Selection.SelectCurrentBySpace();
 						e.Handled = true;
@@ -615,6 +611,8 @@ namespace System.Windows.Controls
 		private void StopEditing()
 		{
 			FocusHelper.Focus(this, true);
+			Keyboard.ClearFocus();
+			Keyboard.Focus(this);
 			IsEditing = false;
 		}
 

@@ -71,7 +71,7 @@
 		<Setter Property="ContentTemplateEdit">
 			<Setter.Value>
 				<DataTemplate>
-					<Controls:EditTextBox Text="{Binding DisplayName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0" Padding="1"/>
+                    <Controls:EditTextBox Text="{Binding DisplayName, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderThickness="0" Padding="1"/>
 				</DataTemplate>
 			</Setter.Value>
 		</Setter>
